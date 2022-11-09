@@ -1,13 +1,13 @@
 package data;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 public class SendData implements Serializable {
 
     private String ipAddres, user, message;
+    
     private boolean Connected;
 
     private Set<String> ipList = new HashSet<>();

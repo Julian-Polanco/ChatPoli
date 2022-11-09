@@ -1,8 +1,6 @@
 package cliente;
 
-import java.io.DataOutputStream;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 public class ConnecServer extends javax.swing.JFrame {
 
@@ -181,11 +179,11 @@ public class ConnecServer extends javax.swing.JFrame {
     }//GEN-LAST:event_IpAddresActionPerformed
 
     private void portNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_portNumberActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_portNumberActionPerformed
 
     private void UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_UserActionPerformed
 
     private void connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectActionPerformed

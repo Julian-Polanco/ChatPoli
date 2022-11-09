@@ -1,16 +1,15 @@
 package data;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SendData implements Serializable{
+public class SendData implements Serializable {
 
-    private String ipAddres,user,message;
+    private String ipAddres, user, message;
+    
     private boolean Connected;
 
-    
     private Set<String> ipList = new HashSet<>();
 
     public Set<String> getIpList() {
@@ -20,8 +19,7 @@ public class SendData implements Serializable{
     public void setIpList(Set<String> ipList) {
         this.ipList = ipList;
     }
-    
-    
+
     public boolean isConnected() {
         return Connected;
     }
@@ -53,5 +51,5 @@ public class SendData implements Serializable{
     public void setMessage(String message) {
         this.message = message;
     }
-    
+
 }

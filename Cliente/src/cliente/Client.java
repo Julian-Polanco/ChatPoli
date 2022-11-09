@@ -2,19 +2,15 @@ package cliente;
 
 import data.SendData;
 import java.io.DataInputStream;
-import java.io.DataOutputStream;
+import java.io.EOFException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 public class Client {
 
@@ -65,13 +61,16 @@ public class Client {
             socket = new Socket(ip, port);
             ObjectOutputStream chat = new ObjectOutputStream(socket.getOutputStream());
             chat.writeObject(sendChat);
-            
+
             ObjectInputStream obj = new ObjectInputStream(socket.getInputStream());
-            
+
             chat.close();
             socket.close();
-        } catch (IOException ex) {
-            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (EOFException e) {
+            // ... this is fine
+        } catch (IOException e) {
+            // handle exception which is not expected
+            Logger.getLogger(Chat.class.getName()).log(Level.SEVERE, "IO", e);
         }
 
     }
