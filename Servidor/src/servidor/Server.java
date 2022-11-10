@@ -14,6 +14,12 @@ import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/***
+ * EL servidor como tal, ejecuta un hilo donde se mantiene toda la lógica, asi como una lista de
+ * las Ips conectadas y lleva el log.
+ * Se utiliza el puerto 5002 por defecto para escucahr las peticiones.
+ * Se asume que los clientes usaran el puerto 9999.
+ */
 public class Server implements Runnable {
 
     private Set<String> ipList = new HashSet<>();
@@ -150,6 +156,9 @@ public class Server implements Runnable {
 
 }
 
+/***
+ * Mantiene los datos del cliente. Nombre del mismo e Ip usada en la conexión
+ */
 class ipList {
 
     private String ip;

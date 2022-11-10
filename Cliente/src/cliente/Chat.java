@@ -9,6 +9,9 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/***
+ * Mantiene el hilo en ejecución de un chat en particular.
+ */
 public class Chat extends javax.swing.JFrame implements Runnable {
 
     public Client client;
@@ -120,6 +123,10 @@ public class Chat extends javax.swing.JFrame implements Runnable {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /***
+     * Al recibir este evento, intenta enviar el mensaje al usuario seleccionado
+     * @param evt El evento esperado de enviar mensaje (event_SendMessageActionPerformed)
+     */
     private void SendMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendMessageActionPerformed
         ipList ipSeleccionada = (ipList) ipTarget.getSelectedItem();
 
@@ -134,6 +141,10 @@ public class Chat extends javax.swing.JFrame implements Runnable {
         client.SendData(sendData);
     }//GEN-LAST:event_SendMessageActionPerformed
 
+    /***
+     * Agrega el mensaje al historico que se muestra.
+     * @param msg El mensaje a agregar
+     */
     public void SetMsg(String msg) {
         chat.append(msg);
     }
@@ -197,6 +208,9 @@ public class Chat extends javax.swing.JFrame implements Runnable {
     }
 }
 
+/***
+ * Mantiene los datos del cliente. Nombre del mismo e Ip usada en la conexión
+ */
 class ipList {
 
     private String ip;

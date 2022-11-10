@@ -2,6 +2,10 @@ package cliente;
 
 import javax.swing.JOptionPane;
 
+/***
+ * Usada para establecer la conexión al servidor.
+ * Se asume que el servidor usa la IP 192.168.20.57 y el puerto 5002.
+ */
 public class ConnecServer extends javax.swing.JFrame {
 
     private Client client = new Client();
@@ -186,6 +190,11 @@ public class ConnecServer extends javax.swing.JFrame {
 
     }//GEN-LAST:event_UserActionPerformed
 
+    /***
+     * Al recibir este evento, intentamos realizar la conexión con el servidor.
+     * Si la conexión es exitosa, entonces el chat es mostrado.
+     * @param evt El evento esperado (event_connectActionPerformed)
+     */
     private void connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectActionPerformed
         String ipAdress = IpAddres.getText();
         String strPort = portNumber.getText();

@@ -12,6 +12,10 @@ import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/***
+ * Implementa el cliente. Hace uso de las clases ConnecServer y Chat para la interfaz gráfica y
+ * la lógica relacionada con las mismas.
+ */
 public class Client {
 
     Socket socket;
@@ -26,6 +30,13 @@ public class Client {
         cn.setVisible(true);
     }
 
+    /***
+     * Intenta establecer la conexión con el servidor.
+     * @param IpAdress La IP del servidor
+     * @param portNumber EL puerto del servidor
+     * @param usr El nombre de usuario usado para esta conexión
+     * @return true si la conexión fue exitosa
+     */
     public boolean connectServer(String IpAdress, int portNumber, String usr) {
         try {
 
@@ -56,6 +67,10 @@ public class Client {
         return false;
     }
 
+    /***
+     * Envía un mensaje al servidor. Hace uso de la clase SendData.
+     * @param sendChat Los datos a ser enviados ya serializados.
+     */
     public void SendData(SendData sendChat) {
         try {
             socket = new Socket(ip, port);
@@ -75,6 +90,10 @@ public class Client {
 
     }
 
+    /***
+     * Obtiene la IP usada en la conexión por el cliente
+     * @return La Ip del cliente
+     */
     public static String getIpAdress() {
         InetAddress ip = null;
         try {

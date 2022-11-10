@@ -1,5 +1,8 @@
 package servidor;
 
+/***
+ * Permite mostrar las entregadas del log que se vayan registrando.
+ */
 public class ServerLog extends javax.swing.JFrame {
     public ServerLog() {
         initComponents();
@@ -56,13 +59,31 @@ public class ServerLog extends javax.swing.JFrame {
             }
         });
     }
+    
+    /***
+     * Escribe una entrada en el log
+     * @param user El usuario que envio el mensaje
+     * @param msg El mensaje enviado
+     * @param ip La IP usada por el usuario en la conexción al servidor
+     */
     public void writeInLog(String user, String msg,String ip){
         Log.append(user+": "+msg+" -> "+ip+"\n");
     }
+    
+    /***
+     * Escribe una entrada en el log
+     * @param msg Este mensaje es descartado y no usado en el log ya que se usa un mesaje estático
+     * @param user El usuario que se está conectando
+     */
     public void writeInLog(String msg,String user){
         Log.append("usuario \""+user+"\" Conectado\n");
     }
-       public void writeInLog(String msg){
+    
+    /***
+     * Escribe una entrada en el log
+     * @param msg El mensaje a registrar en el log
+     */
+    public void writeInLog(String msg){
         Log.append(msg+"\n");
     }
 
