@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+/***
+ * Serializa los datos que se quieren enviar como mensajes entre el cliente y el servidor.
+ * En este caso los datos son, Ip, nombre del usuario y el mensaje a enviar.
+ */
 public class SendData implements Serializable {
 
     private String ipAddres, user, message;
